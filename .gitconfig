@@ -1,0 +1,5 @@
+[user]
+	name = Amey
+	email = ameygaikar28@gmail.com
+[http]
+	postBuffer = 1048576000

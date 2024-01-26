@@ -1,0 +1,1 @@
+/home/amey/dotfiles/.vimrc
