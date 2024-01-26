@@ -48,7 +48,7 @@ set history=100
 set timeoutlen=500 
 
 set noswapfile
-set undofile
+set noundofile
 
 " PLUGINS
 call plug#begin('~/.vim/plugged')
