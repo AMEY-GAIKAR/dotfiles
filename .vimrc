@@ -26,8 +26,13 @@ set smarttab
 " WRAP LONG LINES
 set wrap 
 
- set background=dark
- set noshowmode
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+set noshowmode
 
  " HIGHLIGHT SEARCH, CASE INSENSETIVE, INCREMENTAL SEARCH
 set showcmd
@@ -219,6 +224,9 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 
 " name tab as file name
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" SET COLOR SCHEME
+colorscheme catppuccin_mocha
 
 " Source plugins.vim
 if filereadable(expand("~/.vim/plugins.vim"))
