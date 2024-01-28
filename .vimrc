@@ -61,9 +61,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'preservim/nerdtree' |
-        \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-        \ Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'sheerun/vim-polygot'
 
