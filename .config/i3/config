@@ -4,6 +4,8 @@ font pango:Hack Nerd Font 9
 
 exec_always --no-startup-id feh --bg-fill '~/Pictures/yashiori_island.png'
 
+# exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
 exec --no-startup-id dex --autostart --environment i3
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -17,8 +19,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d "intel_backlight" set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d "intel_backlight" set 5%-
+# bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d "intel_backlight" set +5%
+# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d "intel_backlight" set 5%-
+
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen brightnes
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -161,6 +166,10 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# default_border none
+# gaps inner 5px
+# gaps outer 5px
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
