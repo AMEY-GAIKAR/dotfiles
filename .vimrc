@@ -26,6 +26,7 @@ set smarttab
 " WRAP LONG LINES
 set wrap 
 
+ " TERMINAL COLORS
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -46,36 +47,44 @@ set laststatus=2
 set wildmenu
 set wildmode=list:longest
 
+ " BUFFER TITLE
 set title
 
+ " VIM COMMAND HISTORY LENGHT
 set history=100
 
 set timeoutlen=500 
 
+ " DISABLE SWAPFILES
 set noswapfile
 set noundofile
 
 " PLUGINS
 call plug#begin('~/.vim/plugged')
 
+ " AIRLINE
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+ " NERDTREE
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'sheerun/vim-polygot'
 
+ " THEME
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
+ " FUZZY FINDER
 Plug 'junegunn/fzf' |
         \ Plug 'junegunn/fzf.vim'
 
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
+ " GIT PLUGIN
 Plug 'tpope/vim-fugitive'
 
+ " WHICH KEY
 Plug 'liuchengxu/vim-which-key'
 
 call plug#end()
@@ -87,6 +96,7 @@ nnoremap <leader>wK :WhichKey '<Space>'<CR>
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
 " BUFFER
 nnoremap <tab> :bnext<cr>
 nnoremap <S-tab> :bprevious<cr>
