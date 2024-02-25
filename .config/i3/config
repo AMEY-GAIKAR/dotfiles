@@ -1,14 +1,22 @@
+# set windows key as mod
 set $mod Mod4
 
+# font settings
 font pango:Hack Nerd Font 9
 
-exec_always --no-startup-id feh --bg-fill '~/Pictures/yashiori_island.png'
+# wallpaper (needs debuggig)
+exec_always --no-startup-id feh --bg-fill "Pictures/yashiori_island.png"
+
+# picom compositor
+exec_always --no-startup-id picom -b
 
 # exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
-# Screenshots
+# screenshot the screen
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+# screenshot window
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+# screenshot selection
 bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
 
 exec --no-startup-id dex --autostart --environment i3
@@ -16,8 +24,6 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id nm-applet
-
-exec_always --no-startup-id picom &
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -29,6 +35,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d "intel_backlight" set +5%
 # bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d "intel_backlight" set 5%-
 
+# use light to control screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 2 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2 # decrease screen brightnes
 
@@ -37,6 +44,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
+# default terminal: alacritty
 bindsym $mod+Return exec alacritty
 
 # kill focused window
@@ -144,6 +152,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# switch between workspaces 
 bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
@@ -175,7 +184,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# default_border none
+hide_edge_borders smart
 # gaps inner 5px
 # gaps outer 5px
 
