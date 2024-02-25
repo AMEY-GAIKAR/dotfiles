@@ -1,0 +1,92 @@
+# theme = "Catppuccin"
+
+# [[items]]
+#
+# [items.colors]
+# author = "Chris Kempson"
+# name = "3024 (dark)"
+#
+# [items.colors.bright]
+# black = "#5c5855"
+# blue = "#01a0e4"
+# cyan = "#b5e4f4"
+# green = "#01a252"
+# magenta = "#a16a94"
+# red = "#db2d20"
+# white = "#f7f7f7"
+# yellow = "#fded02"
+#
+# [items.colors.cursor]
+# cursor = "#a5a2a2"
+# text = "#090300"
+#
+# [items.colors.normal]
+# black = "#090300"
+# blue = "#01a0e4"
+# cyan = "#b5e4f4"
+# green = "#01a252"
+# magenta = "#a16a94"
+# red = "#db2d20"
+# white = "#a5a2a2"
+# yellow = "#fded02"
+#
+# [items.colors.primary]
+# background = "#090300"
+# foreground = "#a5a2a2"
+
+# [[items]]
+# theme = "3024.dark"
+
+[[colors.indexed_colors]]
+color = "0xF8BD96"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xF5E0DC"
+index = 17
+
+[colors.bright]
+black = "0x988BA2"
+blue = "0x96CDFB"
+cyan = "0x89DCEB"
+green = "0xABE9B3"
+magenta = "0xF5C2E7"
+red = "0xF28FAD"
+white = "0xD9E0EE"
+yellow = "0xFAE3B0"
+
+[colors.cursor]
+cursor = "0xF5E0DC"
+text = "0x1E1D2F"
+
+[colors.normal]
+black = "0x6E6C7E"
+blue = "0x96CDFB"
+cyan = "0x89DCEB"
+green = "0xABE9B3"
+magenta = "0xF5C2E7"
+red = "0xF28FAD"
+white = "0xD9E0EE"
+yellow = "0xFAE3B0"
+
+[colors.primary]
+background = "0x1E1D2F"
+foreground = "0xD9E0EE"
+
+[font]
+size = 10
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[window]
+opacity = 0.6
