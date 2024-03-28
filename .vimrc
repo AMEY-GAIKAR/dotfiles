@@ -26,7 +26,7 @@ set smarttab
 " WRAP LONG LINES
 set wrap 
 
- " TERMINAL COLORS
+" TERMINAL COLORS
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -35,7 +35,7 @@ endif
 
 set noshowmode
 
- " HIGHLIGHT SEARCH, CASE INSENSETIVE, INCREMENTAL SEARCH
+" HIGHLIGHT SEARCH, CASE INSENSETIVE, INCREMENTAL SEARCH
 set showcmd
 set hlsearch
 set ignorecase
@@ -47,26 +47,26 @@ set laststatus=2
 set wildmenu
 set wildmode=list:longest
 
- " BUFFER TITLE
+" BUFFER TITLE
 set title
 
- " VIM COMMAND HISTORY LENGHT
+" VIM COMMAND HISTORY LENGHT
 set history=100
 
 set timeoutlen=500 
 
- " DISABLE SWAPFILES
+" DISABLE SWAPFILES
 set noswapfile
 set noundofile
 
 " PLUGINS
 call plug#begin('~/.vim/plugged')
 
- " AIRLINE
+" AIRLINE
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
- " NERDTREE
+" NERDTREE
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -74,17 +74,17 @@ Plug 'ryanoasis/vim-devicons'
 
 Plug 'sheerun/vim-polygot'
 
- " THEME
+" THEME
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
- " FUZZY FINDER
+" FUZZY FINDER
 Plug 'junegunn/fzf' |
         \ Plug 'junegunn/fzf.vim'
 
- " GIT PLUGIN
+" GIT PLUGIN
 Plug 'tpope/vim-fugitive'
 
- " WHICH KEY
+" WHICH KEY
 Plug 'liuchengxu/vim-which-key'
 
 call plug#end()
@@ -173,8 +173,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 let g:NERDTreeWinSize = 26
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 " Show hidden files
 let NERDTreeShowHidden=1
@@ -183,7 +183,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeMinimalMenu=1
 
 let g:NERDTreeGitStatusIndicatorMapCustom = {
-                \ 'Modified'  :'✹',
+                \ 'Modified'  :'',
                 \ 'Staged'    :'✚',
                 \ 'Untracked' :'✭',
                 \ 'Renamed'   :'➜',
@@ -237,6 +237,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " SET COLOR SCHEME
 colorscheme catppuccin_mocha
+
+" LSP
 
 " Source plugins.vim
 if filereadable(expand("~/.vim/plugins.vim"))
