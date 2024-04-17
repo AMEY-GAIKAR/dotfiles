@@ -8,7 +8,7 @@ font pango:Hack Nerd Font 9
 exec_always --no-startup-id picom -b
 
 # wallpaper (needs debuggig)
-exec_always --no-startup-id feh --bg-fill "Pictures/yashiori_island.png"
+exec_always --no-startup-id feh --bg-fill "Pictures/Wallpapers/yashiori_island.png"
 
 # exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
@@ -191,6 +191,10 @@ bindsym $mod+r mode "resize"
 hide_edge_borders none
 default_border pixel 2
 default_floating_border pixel 2
+
+# gaps 
+gaps outer 2 px
+gaps inner 2 px
 
 # set color palette
 set $rosewater #f5e0dc
