@@ -7,11 +7,12 @@ font pango:Hack Nerd Font 9
 # picom compositor
 exec_always --no-startup-id picom -b
 
-# wallpaper (needs debuggig)
+# set wallpaper with feh
 exec_always --no-startup-id feh --bg-fill "Pictures/Wallpapers/yashiori_island.png"
 
 # exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
+#Screenshot settings
 # screenshot the screen
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date).png"
 # screenshot window
