@@ -125,6 +125,7 @@ fi
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=/usr/share/swift/usr/bin:$PATH
+export PATH="/usr/share/flutter/bin:$PATH"
 
 eval "$(starship init bash)"
 
