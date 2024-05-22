@@ -1,4 +1,4 @@
-# set windows key as mod
+set windows key as mod
 set $mod Mod4
 
 # font settings
@@ -22,7 +22,7 @@ bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Scr
 
 exec --no-startup-id dex --autostart --environment i3
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork   
 
 exec --no-startup-id nm-applet
 
@@ -190,7 +190,7 @@ bindsym $mod+r mode "resize"
 
 # borders
 hide_edge_borders none
-default_border pixel 2
+default_border pixel 4
 default_floating_border pixel 2
 
 # gaps 
