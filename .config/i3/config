@@ -1,4 +1,4 @@
-set windows key as mod
+#set windows key as mod
 set $mod Mod4
 
 # font settings
