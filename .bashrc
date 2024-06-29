@@ -131,3 +131,5 @@ eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source /home/amey/alacritty/extra/completions/alacritty.bash
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
