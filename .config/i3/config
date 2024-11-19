@@ -23,9 +23,9 @@ bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Scr
 exec --no-startup-id dex --autostart --environment i3
 
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork   
-exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/./i3lock-color/lock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/./i3lock-dracula/lock
 
-bindsym $mod+Shift+x exec ~/./i3lock-color/lock
+bindsym $mod+Shift+x exec ~/./i3lock-dracula/lock
 
 exec --no-startup-id nm-applet
 
