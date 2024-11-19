@@ -5,7 +5,7 @@ set $mod Mod4
 font pango:Hack Nerd Font 9
 
 # picom compositor
-exec_always --no-startup-id picom -b
+exec_always --no-startup-id picom -b --config ~/dotfiles/.config/picom.conf
 
 # set wallpaper with feh
 exec_always --no-startup-id feh --bg-fill "Pictures/Wallpapers/yashiori_island.png"
