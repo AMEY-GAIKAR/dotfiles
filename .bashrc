@@ -122,13 +122,15 @@ fi
 
 # ~/.bashrc
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=/usr/share/swift/usr/bin:$PATH
 export PATH="/usr/share/flutter/bin:$PATH"
 export PATH=$PATH:~/.cargo/bin/
 export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH"
+export PATH="$HOME/odin-linux-amd64-nightly+2024-12-05:$PATH"
 
 eval "$(starship init bash)"
 
@@ -136,3 +138,12 @@ eval "$(starship init bash)"
 source /home/amey/alacritty/extra/completions/alacritty.bash
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+. "/home/amey/.deno/env"

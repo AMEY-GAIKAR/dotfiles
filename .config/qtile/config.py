@@ -184,15 +184,15 @@ screens = [
                 widget.Prompt(),
                 # widget.WindowName(),
                 widget.Spacer(),
-                widget.Net(format='{down:.0f}{down_suffix} ↓↑ {up:.0f}{up_suffix}'),
-                # widget.Wlan(
-                #     format='{essid}'
-                # ),
-                # widget.OpenWeather(
-                #     location='Mumbai',
-                #     app_key='d5659f9de4489806dfe2c2b033ff7901',
-                #     format='{location_city}: {main_temp}°' 
-                # ),
+                # widget.Net(format='{down:.0f}{down_suffix} ↓↑ {up:.0f}{up_suffix}'),
+                widget.Wlan(
+                    format='{essid}'
+                ),
+                widget.OpenWeather(
+                    location='Mumbai',
+                    app_key='d5659f9de4489806dfe2c2b033ff7901',
+                    format='{location_city}: {main_temp}°' 
+                ),
                 widget.Battery(
                     background='#bac2de',
                     charge_char='󰂄',

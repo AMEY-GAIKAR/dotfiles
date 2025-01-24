@@ -10,6 +10,12 @@ local field_arrangement = {
   atom_colored = { "kind", "abbr", "menu" },
 }
 
+cmp.setup({
+  sources = cmp.config.sources({
+    { name = 'render-markdown' },
+  }),
+})
+
 local formatting_style = {
   -- default fields order i.e completion word + item.kind + item.kind icons
   fields = field_arrangement[cmp_style] or { "abbr", "kind", "menu" },
