@@ -146,8 +146,8 @@ layouts = [
     layout.RatioTile(
         border_focus=colors.color_palette['rosewater'],
         border_normal=colors.color_palette['overlay0'],
-        border_width=2,
-        margin=5,
+        border_width=3,
+        margin=2,
     ),
     # layout.Tile(),
     # layout.TreeTab(),
@@ -156,7 +156,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="Ubuntu",
+    font="NotoSansMono",
     fontsize=12,
     padding=4,
 )
@@ -171,8 +171,8 @@ screens = [
                 widget.GroupBox(
                     active=colors.color_palette['lavender'],
                     background=colors.color_palette['base'],
-                    block_highlight_text_color=colors.color_palette['red'],
-                    borderwidth=1,
+                    block_highlight_text_color=colors.color_palette['green'],
+                    borderwidth=0,
                     hide_unused=True,
                     highlight_color=colors.color_palette['red'],
                     this_current_screen_border=colors.color_palette['maroon'],
@@ -185,14 +185,14 @@ screens = [
                 # widget.WindowName(),
                 widget.Spacer(),
                 # widget.Net(format='{down:.0f}{down_suffix} ↓↑ {up:.0f}{up_suffix}'),
-                widget.Wlan(
-                    format='{essid}'
-                ),
-                widget.OpenWeather(
-                    location='Mumbai',
-                    app_key='d5659f9de4489806dfe2c2b033ff7901',
-                    format='{location_city}: {main_temp}°' 
-                ),
+                # widget.Wlan(
+                #     format='{essid}'
+                # ),
+                # widget.OpenWeather(
+                #     location='Mumbai',
+                #     app_key='d5659f9de4489806dfe2c2b033ff7901',
+                #     format='{location_city}: {main_temp}°' 
+                # ),
                 widget.Battery(
                     background='#bac2de',
                     charge_char='󰂄',
@@ -224,8 +224,8 @@ screens = [
                 # widget.QuickExit(),
             ],
             24,
-            # border_width=[1, 0, 1, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            border_width=[3, 3, 3, 3],  # Draw top and bottom borders
+            border_color=[colors.color_palette['pink'], colors.color_palette['pink'], colors.color_palette['pink'], colors.color_palette['pink']]  # Borders are magenta
         ),
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
@@ -248,11 +248,11 @@ bring_front_click = False
 floats_kept_above = True
 cursor_warp = False
 floating_layout = layout.Floating(
-    # border_focus=colors.color_palette['rosewater'],
-    # border_normal=colors.color_palette['overlay0'],
-    # border_width='2',
-    # fullscreen_border_width='2',
-    # max_border_width='2',
+    border_focus=colors.color_palette['rosewater'],
+    border_normal=colors.color_palette['overlay0'],
+    border_width='2',
+    fullscreen_border_width='2',
+    max_border_width='2',
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
