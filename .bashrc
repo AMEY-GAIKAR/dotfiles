@@ -92,6 +92,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Obsidian alias
+alias obsidian='cd ~ && ./Obsidian-1.8.4.AppImage --no-sandbox'
+
 # Search for a command and open its mannual page using fzf
 alias fman="compgen -c | fzf | xargs man"
 
@@ -131,6 +134,7 @@ export PATH=$PATH:~/.cargo/bin/
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH"
 export PATH="$HOME/odin-linux-amd64-nightly+2024-12-05:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 
 eval "$(starship init bash)"
 

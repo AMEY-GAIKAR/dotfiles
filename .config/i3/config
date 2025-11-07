@@ -8,7 +8,7 @@ font pango:Hack Nerd Font 9
 exec_always --no-startup-id picom -b --config ~/dotfiles/.config/picom.conf
 
 # set wallpaper with feh
-exec_always --no-startup-id feh --bg-fill "Pictures/Wallpapers/yashiori_island.png"
+exec_always --no-startup-id feh --bg-fill "Pictures/Wallpapers/Wallpapers_for_Polaris_7_1920x1080_EN.jpeg"
 
 # exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 

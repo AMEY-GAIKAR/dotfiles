@@ -17,6 +17,7 @@ wireless _first_ {
 
 battery 0 {
         format = "%status %percentage "
+        format_percentage = "%.0f%s"
         format_down = "No battery"
         status_chr = " 󰂅  CHR"
         status_bat = "   BAT "
