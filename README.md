@@ -2,34 +2,112 @@
 
 [Github Repository](https://github.com/AMEY-GAIKAR/dotfiles)
 
-- X
-- [Picom](https://wiki.archlinux.org/title/Picom)
-- Bash
+git
 
-## TMUX
+bash
 
-[Installation](https://github.com/tmux/tmux)
+- WM
 
-## Terminal Emulators
+i3, i3bar, i3status, i3lock, i3colour, i3lock-dracula
 
-- [Alacritty](https://alacritty.org/)
+dwm, dmenu, st 
 
-## Text Editors
+qtile
 
-- Vim
-- [Neovim](https://neovim.io/)
-    - [NvChad](https://nvchad.com/)
+hyprland, hyprpaper
 
-## Tiling Window Managers
+drun, rofi, rofi-themes, polybar
 
-- [I3](https://i3wm.org/)
-- [Qtile](https://docs.qtile.org/en/stable/#)
-- [DWM](https://dwm.suckless.org/)
+- Compilers
 
-## Web Browsers
+gcc, clang, cmake
 
-- [Zen Browser](https://zen-browser.app/)
+python, jupyter
 
-## Image Viewer
+go
 
-- [Feh](https://wiki.archlinux.org/title/Feh)
+node, bun, deno
+
+java
+
+rust
+
+odin 
+
+zig 
+
+flutter
+
+swift
+
+dart
+
+- Terminal
+
+alacritty, kitty, ghostty
+
+tmux, zellij
+
+starship
+
+neofetch, fastfetch
+
+htop
+
+lazygit
+
+nerd fonts
+
+- Editor
+
+nvim (nvchad/lazy)
+
+- Compositor
+
+picom
+
+- I/O 
+
+audio: pactl
+
+screen brightness: light
+
+screenshot/record: maim
+
+- utils
+
+nautilus
+
+fzf
+
+feh
+
+glow
+
+stormy
+
+gcsim
+
+- Applications
+
+chrome
+
+psql, mysql, mongodb, 
+
+redis, valkey, memcached
+
+sqlite browser, redis desktop manager
+
+- Appimages
+
+appimagelauncher
+
+obsidian, koodoreader, calibre
+
+httpie, postman
+
+melonds, mgba, azahar
+
+docker
+
+qemu
