@@ -1,0 +1,43 @@
+general {
+        colors = true
+        interval = 1
+        color_good = "#a6e3a1"
+        color_degraded = "#fab2af"
+        color_bad = "#f38ba8"
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "volume master"
+order += "battery 0"
+order += "tztime local"
+
+cpu_usage {
+        format = "| 󰍛 %usage |"
+}
+
+memory {
+        format = "  %used/%total |"
+}
+
+volume master {
+        format = " %volume |"
+        format_muted = "󰝛 %volume"
+        device = "pulse:1"
+}
+
+battery 0 {
+        format = "%status %percentage |"
+        format_percentage = "%.0f%s"
+        format_down = "No battery"
+        status_chr = "󰂄"
+        status_bat = "󰁿"
+        status_unk = "?"
+        status_full = "󰁹"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 30
+}
+
+tztime local {
+        format = " %H:%M:%S | 󰃭 %a %b %d "
+}
