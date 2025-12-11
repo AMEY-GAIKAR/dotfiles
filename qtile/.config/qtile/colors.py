@@ -24,5 +24,5 @@ color_palette = {
     "surface0": "#313244",
     "base": "#1e1e2e",
     "mantle": "#181825",
-    "crust": "#11111b"
+    "crust": "#11111b",
 }
