@@ -3,8 +3,7 @@ local options = {
   formatters_by_ft = {
     c = { "clang-format" },
     cpp = { "clang-format" },
-    -- go = { "gofumpt", "goimports-reviser", "golines" },
-    go = { "gofumpt", "goimports-reviser" },
+    go = { "gofumpt", "goimports-reviser", "golines" },
     lua = { "stylua" },
     python = { "isort", "black" },
   },
@@ -26,9 +25,9 @@ local options = {
       prepend_args = { "-rm-unused" },
     },
 
-    -- golines = {
-    --   prepend_args = { "--max-len=80" },
-    -- },
+    golines = {
+      -- prepend_args = { "--max-len=80" },
+    },
 
     black = {
       prepend_args = {

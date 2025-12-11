@@ -29,7 +29,13 @@ lspconfig.servers = {
 }
 
 -- list of servers configured with default config.
-local default_servers = {}
+local default_servers = {
+  "lua_ls",
+  "clangd",
+  "gopls",
+  "pyright",
+  "ols",
+}
 
 -- lsps with default config
 for _, lsp in ipairs(default_servers) do
@@ -67,7 +73,7 @@ vim.lsp.config("gopls", { -- nvim 0.11
   root_dir = require("lspconfig.util").root_pattern("go.work", "go.mod", ".git"), -- nvim 0.11
   settings = {
     gopls = {
-      analyses = {
+      analyses = off {
         unusedparams = true,
       },
       completeUnimported = true,
@@ -113,7 +119,7 @@ vim.lsp.config("pyright", { -- nvim 0.11
   settings = {
     python = {
       analysis = {
-        typeCheckingMode = "off", -- Disable type checking diagnostics
+        typeCheckingMode = "on", -- Disable type checking diagnostics
       },
     },
   },

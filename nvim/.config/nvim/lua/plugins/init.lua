@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = "BufWritePre",
+    event = "BufWritePre",
     config = function()
       require "configs.conform"
     end,
@@ -9,7 +9,7 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    -- event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require "configs.treesitter"
     end,
@@ -17,7 +17,7 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    -- event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
@@ -26,7 +26,7 @@ return {
 
   {
     "mfussenegger/nvim-lint",
-    -- event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require "configs.lint"
     end,
@@ -99,6 +99,17 @@ return {
     config = function()
       require "configs.mason-dap"
     end,
+  },
+
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    build = function()
+      vim.cmd.GoInstallDeps()
+    end,
+    ---@module "gopher"
+    ---@type gopher.Config
+    opts = {},
   },
 
   {
