@@ -119,7 +119,35 @@ return {
     ---@type snacks.Config
     opts = {
       bigfile = { enabled = true },
-      dashboard = { enabled = true },
+      -- dashboard = { enabled = true },
+      dashboard = {
+        sections = {
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 1 },
+          { section = "startup" },
+          {
+            section = "terminal",
+            cmd = "pokemon-colorscripts -n gengar -f mega --no-title; sleep .1",
+            pane = 2,
+            indent = 4,
+            height = 20,
+          },
+          {
+            pane = 2,
+            icon = " ",
+            title = "Git Status",
+            section = "terminal",
+            enabled = function()
+              return Snacks.git.get_root() ~= nil
+            end,
+            cmd = "git status --short --branch --renames",
+            height = 10,
+            padding = 1,
+            ttl = 5 * 60,
+            indent = 3,
+          },
+        },
+      },
       explorer = { enabled = true },
       indent = { enabled = true },
       input = { enabled = true },

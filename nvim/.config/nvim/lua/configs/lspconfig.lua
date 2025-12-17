@@ -73,7 +73,7 @@ vim.lsp.config("gopls", { -- nvim 0.11
   root_dir = require("lspconfig.util").root_pattern("go.work", "go.mod", ".git"), -- nvim 0.11
   settings = {
     gopls = {
-      analyses = off {
+      analyses = {
         unusedparams = true,
       },
       completeUnimported = true,
