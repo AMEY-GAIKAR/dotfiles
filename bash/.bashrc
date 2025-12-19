@@ -36,6 +36,9 @@ alias fman="compgen -c | fzf | xargs man"
 
 eval "$(starship init bash)"
 
+# pokemon-colorscripts
+# pokemon-colorscripts -rn glaceon,snover,froslass,articuno --no-title
+
 # . "$HOME/.cargo/env"
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:
