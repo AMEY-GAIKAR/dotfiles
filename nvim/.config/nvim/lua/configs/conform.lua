@@ -5,7 +5,8 @@ local options = {
     cpp = { "clang-format" },
     go = { "gofumpt", "goimports-reviser", "golines" },
     lua = { "stylua" },
-    python = { "isort", "black" },
+    -- python = { "isort", "black" },
+    python = { "ruff_format" },
   },
 
   formatters = {
@@ -29,25 +30,36 @@ local options = {
       -- prepend_args = { "--max-len=80" },
     },
 
-    black = {
-      prepend_args = {
-        "--fast",
-        "--line-length",
-        "80",
+    ruff_format = {
+      command = "ruff",
+      args = {
+        "format",
+        "--stdin-filename",
+        "$FILENAME",
+        "-",
       },
+      stdin = true,
     },
 
-    isort = {
-      prepend_args = {
-        "--profile",
-        "black",
-      },
-    },
+    -- black = {
+    --   prepend_args = {
+    --     "--fast",
+    --     "--line-length",
+    --     "80",
+    --   },
+    -- },
+    --
+    -- isort = {
+    --   prepend_args = {
+    --     "--profile",
+    --     "black",
+    --   },
+    -- },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 500,
+    timeout_ms = 900,
     lsp_fallback = true,
   },
 }

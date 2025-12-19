@@ -4,8 +4,9 @@ local servers = {
   "lua_ls",
   "clangd",
   "gopls",
-  "pyright",
+  -- "pyright"
   "ols",
+  "ty",
 }
 
 vim.lsp.enable(servers)
@@ -24,8 +25,9 @@ lspconfig.servers = {
   "lua_ls",
   "clangd",
   "gopls",
-  "pyright",
+  -- "pyright"
   "ols",
+  "ty",
 }
 
 -- list of servers configured with default config.
@@ -33,8 +35,9 @@ local default_servers = {
   "lua_ls",
   "clangd",
   "gopls",
-  "pyright",
+  -- "pyright"
   "ols",
+  "ty",
 }
 
 -- lsps with default config
@@ -110,17 +113,28 @@ vim.lsp.config("lua_ls", { -- nvim 0.11
   },
 })
 
--- lspconfig.pyright.setup({ -- pre nvim 0.11
-vim.lsp.config("pyright", { -- nvim 0.11
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
+-- -- lspconfig.pyright.setup({ -- pre nvim 0.11
+-- vim.lsp.config("pyright", { -- nvim 0.11
+--   on_attach = on_attach,
+--   on_init = on_init,
+--   capabilities = capabilities,
+--
+--   settings = {
+--     python = {
+--       analysis = {
+--         typeCheckingMode = "on", -- Disable type checking diagnostics
+--       },
+--     },
+--   },
+-- })
 
+vim.lsp.config("ty", {
   settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "on", -- Disable type checking diagnostics
-      },
+    ty = {
+      -- ty language server settings go here
+      diagnosticMode = "workspace",
     },
   },
 })
+
+vim.lsp.enable "ty"
