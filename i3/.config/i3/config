@@ -1,4 +1,4 @@
-#set windows key as mod
+# set windows key as mod
 set $mod Mod4
 
 # font settings
@@ -10,15 +10,17 @@ exec_always --no-startup-id picom -b --config ~/.config/picom.conf
 # set wallpaper with feh
 exec_always --no-startup-id feh --bg-fill "/home/amey/Pictures/Wallpapers/Witcher_IV_Wallpaper_01_13840x2160_EN.jpeg"
 
-# exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+# touchpad settings
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
 
-#Screenshot settings
+# Screenshot settings
 # screenshot the screen
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date).png"
 # screenshot window
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date).png"
 # screenshot selection
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date).png"
+bindsym $mod+Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date).png"
 
 exec --no-startup-id dex --autostart --environment i3
 
