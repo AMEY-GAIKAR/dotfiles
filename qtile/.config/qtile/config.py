@@ -2,10 +2,9 @@ import os
 import subprocess
 
 import colors
-from libqtile import bar, extension, hook, layout, widget
+from libqtile import bar, hook, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.widget import backlight
 
 mod = "mod4"
 terminal = "alacritty"
@@ -19,23 +18,14 @@ keys = [
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key(
-        [mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
-    ),
-    Key(
-        [mod, "shift"],
-        "l",
-        lazy.layout.shuffle_right(),
-        desc="Move window to the right",
-    ),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    Key(
-        [mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"
-    ),
+    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
@@ -43,68 +33,30 @@ keys = [
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key(
-        [mod, "shift"],
-        "Return",
-        lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack",
-    ),
+    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
-    Key(
-        [mod],
-        "f",
-        lazy.window.toggle_fullscreen(),
-        desc="Toggle fullscreen on the focused window",
-    ),
-    Key(
-        [mod],
-        "t",
-        lazy.window.toggle_floating(),
-        desc="Toggle floating on the focused window",
-    ),
+    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
+    Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key(
-        [mod, "shift"],
-        "x",
-        lazy.spawn("/home/amey/i3lock-color/lock"),
-        desc="Lock screen",
-    ),
+    Key([mod, "shift"], "x", lazy.spawn("/home/amey/i3lock-color/lock"), desc="Lock screen"),
     Key([mod, "shift"], "e", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key(
-        [mod],
-        "d",
-        lazy.spawn("rofi -show drun"),
-        desc="Spawn a command using a prompt widget",
-    ),
+    Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Spawn a command using a prompt widget"),
     # Control brightness
-    Key(
-        [],
-        "XF86MonBrightnessUp",
-        lazy.spawn("light -A 10"),
-        desc="Brightness Up",
-    ),
-    Key(
-        [],
-        "XF86MonBrightnessDown",
-        lazy.spawn("light -U 10"),
-        desc="Brightness Down",
-    ),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("light -A 10"), desc="Brightness Up"),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("light -U 10"), desc="Brightness Down"),
     # Control audio
-    Key(
-        [],
-        "XF86AudioRaiseVolume",
-        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
-    ),
-    Key(
-        [],
-        "XF86AudioLowerVolume",
-        lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"),
-    ),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")),
     Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+    # Screenshot
+    Key([], "Print", lazy.spawn('maim /home/amey/Pictures/Screenshots/"$(date)".png', shell=True), desc="Screenshot"),
+    # FIX
+    Key([mod], "Print", lazy.spaw('maim --window "$(xdotool getactivewindow)" /home/amey/Pictures/Screenshots/"$(date)".png', shell=True), desc="Screenshot"),
+    Key([mod, "shift"], "Print", lazy.spawn('maim --select /home/amey/Pictures/Screenshots/"$(date)".png', shell=True), desc="Screenshot"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -186,13 +138,13 @@ screens = [
                     background=colors.color_palette["base"],
                     foreground=colors.color_palette["text"],
                     func=lambda: subprocess.check_output(["light", "-G"])
-                    .decode("utf-8")
-                    .split(".")[0],
+                        .decode("utf-8")
+                        .split(".")[0],
                     update_interval=0.5,
                     fmt=" {}%",
                     mouse_callbacks={
-                        "Button4": lazy.spawn("light -A 5"),
-                        "Button5": lazy.spawn("light -U 5"),
+                        "Button5": lazy.spawn("light -A 5"),
+                        "Button4": lazy.spawn("light -U 5"),
                     },
                 ),
                 widget.Sep(
@@ -227,12 +179,25 @@ screens = [
                         "Button1": lazy.spawn(
                             "pactl set-sink-mute @DEFAULT_SINK@ toggle"
                         ),
-                        "Button4": lazy.spawn(
+                        "Button5": lazy.spawn(
                             "pactl set-sink-volume @DEFAULT_SINK@ +5%"
                         ),
-                        "Button5": lazy.spawn(
+                        "Button4": lazy.spawn(
                             "pactl set-sink-volume @DEFAULT_SINK@ -5%"
                         ),
+                    },
+                ),
+                widget.Sep(
+                    background=colors.color_palette["base"],
+                    foreground=colors.color_palette["text"],
+                    padding=10,
+                ),
+                widget.GenPollText(
+                    background=colors.color_palette["base"],
+                    foreground=colors.color_palette["text"],
+                    fmt="󰄀 ",
+                    mouse_callbacks={
+                        "Button1": lazy.spawn('maim /home/amey/Pictures/Screenshots/"$(date)".png', shell=True),
                     },
                 ),
                 widget.Sep(
