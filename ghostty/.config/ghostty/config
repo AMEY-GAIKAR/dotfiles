@@ -1,7 +1,10 @@
 # Dynamic theme colors
-config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
+# config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
 
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
+
+# Background
+background-opacity = 0.6
 
 # Font
 font-family = "CaskaydiaMono Nerd Font"
@@ -14,6 +17,7 @@ window-padding-x = 14
 window-padding-y = 14
 confirm-close-surface=false
 resize-overlay = never
+gtk-titlebar = false
 gtk-toolbar-style = flat
 
 # Cursor styling

@@ -30,6 +30,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias eza='eza -A --grid --icons'
 
 # Search for a command and open its mannual page using fzf
 alias fman="compgen -c | fzf | xargs man"
