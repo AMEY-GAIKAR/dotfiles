@@ -3,13 +3,14 @@ local options = {
   formatters_by_ft = {
     c = { "clang-format" },
     cpp = { "clang-format" },
-    go = { "gofumpt", "goimports-reviser", "golines" },
+    -- go = { "gofumpt", "goimports-reviser", "golines" },
     lua = { "stylua" },
-    -- python = { "isort", "black" },
+    python = { "isort", "black" },
     python = { "ruff_format" },
   },
 
   formatters = {
+    -- C & C++
     ["clang-format"] = {
       prepend_args = {
         "-style={ \
@@ -22,14 +23,16 @@ local options = {
       },
     },
 
-    ["goimports-reviser"] = {
-      prepend_args = { "-rm-unused" },
-    },
+    -- Golang
+    -- ["goimports-reviser"] = {
+    --   prepend_args = { "-rm-unused" },
+    -- },
+    --
+    -- golines = {
+    --   prepend_args = { "--max-len=80" },
+    -- },
 
-    golines = {
-      -- prepend_args = { "--max-len=80" },
-    },
-
+    -- Python
     ruff_format = {
       command = "ruff",
       args = {
@@ -41,20 +44,20 @@ local options = {
       stdin = true,
     },
 
-    -- black = {
-    --   prepend_args = {
-    --     "--fast",
-    --     "--line-length",
-    --     "80",
-    --   },
-    -- },
-    --
-    -- isort = {
-    --   prepend_args = {
-    --     "--profile",
-    --     "black",
-    --   },
-    -- },
+    black = {
+      prepend_args = {
+        "--fast",
+        "--line-length",
+        "80",
+      },
+    },
+
+    isort = {
+      prepend_args = {
+        "--profile",
+        "black",
+      },
+    },
   },
 
   format_on_save = {

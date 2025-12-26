@@ -1,23 +1,8 @@
-require("nvchad.configs.lspconfig").defaults()
-
-local servers = {
-  "lua_ls",
-  "clangd",
-  "gopls",
-  -- "pyright"
-  "ols",
-  "ty",
-}
-
-vim.lsp.enable(servers)
-
--- read :h vim.lsp.config for changing options of lsp servers
-
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
--- local lspconfig = require("lspconfig") -- pre nvim 0.11
+-- local lspconfig = require "lspconfig" -- pre nvim 0.11
 local lspconfig = require "nvchad.configs.lspconfig" -- nvim 0.11
 
 -- list of all servers configured.
@@ -25,7 +10,7 @@ lspconfig.servers = {
   "lua_ls",
   "clangd",
   "gopls",
-  -- "pyright"
+  "pyright",
   "ols",
   "ty",
 }
@@ -35,7 +20,7 @@ local default_servers = {
   "lua_ls",
   "clangd",
   "gopls",
-  -- "pyright"
+  "pyright",
   "ols",
   "ty",
 }
@@ -49,6 +34,8 @@ for _, lsp in ipairs(default_servers) do
     capabilities = capabilities,
   })
 end
+
+-- read :h vim.lsp.config for changing options of lsp servers
 
 -- lspconfig.clangd.setup({ -- pre nvim 0.11
 vim.lsp.config("clangd", { -- nvim 0.11
@@ -73,7 +60,7 @@ vim.lsp.config("gopls", { -- nvim 0.11
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gotmpl", "gowork" },
   -- root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"), -- pre nvim 0.11
-  root_dir = require("lspconfig.util").root_pattern("go.work", "go.mod", ".git"), -- nvim 0.11
+  -- root_dir = require("lspconfig.util").root_pattern("go.work", "go.mod", ".git"), -- nvim 0.11
   settings = {
     gopls = {
       analyses = {
@@ -113,28 +100,10 @@ vim.lsp.config("lua_ls", { -- nvim 0.11
   },
 })
 
--- -- lspconfig.pyright.setup({ -- pre nvim 0.11
--- vim.lsp.config("pyright", { -- nvim 0.11
---   on_attach = on_attach,
---   on_init = on_init,
---   capabilities = capabilities,
---
---   settings = {
---     python = {
---       analysis = {
---         typeCheckingMode = "on", -- Disable type checking diagnostics
---       },
---     },
---   },
--- })
-
 vim.lsp.config("ty", {
   settings = {
     ty = {
-      -- ty language server settings go here
       diagnosticMode = "workspace",
     },
   },
 })
-
-vim.lsp.enable "ty"
