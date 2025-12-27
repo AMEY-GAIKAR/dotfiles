@@ -10,6 +10,7 @@ lspconfig.servers = {
   "lua_ls",
   "clangd",
   "gopls",
+  "jdtls",
   "pyright",
   "ols",
   "ty",
@@ -20,6 +21,7 @@ local default_servers = {
   "lua_ls",
   "clangd",
   "gopls",
+  "jdtls",
   "pyright",
   "ols",
   "ty",
@@ -107,3 +109,12 @@ vim.lsp.config("ty", {
     },
   },
 })
+
+vim.lsp.config("jdtls", {
+  cmd = { "jdtls" },
+  root_dir = vim.fs.root(0, { "gradlew", ".git", "mvnw" }),
+  settings = {
+    java = {},
+  },
+})
+vim.lsp.enable "jdtls"
