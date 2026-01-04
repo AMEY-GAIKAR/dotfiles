@@ -45,6 +45,17 @@ return {
     "williamboman/mason-lspconfig.nvim",
     event = "VeryLazy",
     dependencies = { "nvim-lspconfig" },
+    opts = {
+      registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+      },
+      ensure_installed = {
+        "roslyn",
+        "csharp-language-server",
+        -- "omnisharp",
+      },
+    },
     config = function()
       require "configs.mason-lspconfig"
     end,
@@ -110,6 +121,16 @@ return {
     ---@module "gopher"
     ---@type gopher.Config
     opts = {},
+  },
+
+  {
+    "seblyng/roslyn.nvim",
+    ---@module 'roslyn.config'
+    ---@type RoslynNvimConfig
+    ft = { "cs", "razor" },
+    opts = {
+      -- your configuration comes here; leave empty for default settings
+    },
   },
 
   {

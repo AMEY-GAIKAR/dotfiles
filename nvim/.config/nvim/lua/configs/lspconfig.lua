@@ -9,9 +9,12 @@ local lspconfig = require "nvchad.configs.lspconfig" -- nvim 0.11
 lspconfig.servers = {
   "lua_ls",
   "clangd",
+  -- "csharp-language-server",
   "gopls",
-  "pyright",
   "ols",
+  "omnisharp",
+  "pyright",
+  "roslyn",
   "ty",
 }
 
@@ -19,9 +22,12 @@ lspconfig.servers = {
 local default_servers = {
   "lua_ls",
   "clangd",
+  -- "csharp-language-server",
   "gopls",
-  "pyright",
   "ols",
+  "omnisharp",
+  "pyright",
+  "roslyn",
   "ty",
 }
 
@@ -107,3 +113,5 @@ vim.lsp.config("ty", {
     },
   },
 })
+
+vim.lsp.config("roslyn", {})
